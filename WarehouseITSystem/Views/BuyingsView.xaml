@@ -1,0 +1,53 @@
+﻿<Window x:Class="WarehouseITSystem.Views.BuyingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WarehouseITSystem.Views" 
+             xmlns:utils="clr-namespace:WarehouseITSystem.Utils" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" MaxWidth="1200" WindowStartupLocation="CenterScreen" Style="{StaticResource defaultUnresizableWindow}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="FilterText" Style="{StaticResource defaultTextBox}"/>
+            <Button x:Name="SearchFilter" Style="{DynamicResource defaultButton}">
+                <Image Source="pack://application:,,,/Media/icon_search.png"/>
+            </Button>
+        </StackPanel>
+
+        <TextBlock x:Name="BuyingsInfo" Grid.Row="1" Text="Поставки ..." Style="{StaticResource defaultTextBlock}"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid x:Name="Sellings" Grid.Column="0" IsReadOnly="True">
+                <i:Interaction.Behaviors>
+                    <utils:ColumnHeaderBehaviour/>
+                </i:Interaction.Behaviors>
+            </DataGrid>
+
+            <DataGrid x:Name="NomenclaturesDate" Grid.Column="1" IsReadOnly="True">
+                <i:Interaction.Behaviors>
+                    <utils:ColumnHeaderBehaviour/>
+                </i:Interaction.Behaviors>
+            </DataGrid>
+        </Grid>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3">
+            <Button x:Name="CloseWindow" Style="{DynamicResource defaultButton}">
+                Назад
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

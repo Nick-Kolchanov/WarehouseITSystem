@@ -1,0 +1,70 @@
+﻿<Window x:Class="WarehouseITSystem.Views.AddProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WarehouseITSystem.Views" 
+             xmlns:utils="clr-namespace:WarehouseITSystem.Utils"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             Title="Добавление поставки" d:DesignHeight="450" d:DesignWidth="800" WindowStartupLocation="CenterScreen" Width="1200" Height="600" ResizeMode="NoResize" Style="{StaticResource defaultWindow}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Добавление поставки товаров" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource defaultTextBlock}"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="FilterText" Style="{StaticResource defaultTextBox}"/>
+                <Button x:Name="SearchFilter" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_search.png"/>
+                </Button>
+            </StackPanel>
+
+           
+            <TextBlock Text="Наименование товара:" Grid.Column="0" Grid.Row="1" Style="{StaticResource defaultTextBlock}"/>
+            <DataGrid x:Name="Nomenclatures" Grid.Column="0" Grid.Row="2" Grid.RowSpan="7" IsReadOnly="True">
+                <i:Interaction.Behaviors>
+                    <utils:ColumnHeaderBehaviour/>
+                </i:Interaction.Behaviors>
+            </DataGrid>
+            <TextBlock Text="Поставщик:" Grid.Column="1" Grid.Row="1" Style="{StaticResource defaultTextBlock}"/>
+            <ComboBox Name="Suppliers" Grid.Column="1" Grid.Row="2" Style="{StaticResource defaultComboBox}"/>
+            <TextBlock Text="Дата поставки:" Grid.Column="1" Grid.Row="3" Style="{StaticResource defaultTextBlock}"/>
+            <TextBox Name="DeliveryDate" Grid.Column="1" Grid.Row="4" Style="{StaticResource defaultTextBox}"/>
+            <TextBlock Text="Склад:" Grid.Column="1" Grid.Row="5" Style="{StaticResource defaultTextBlock}"/>
+            <ComboBox Name="Warehouses" Grid.Column="1" Grid.Row="6" Style="{StaticResource defaultComboBox}"/>
+            <TextBlock Text="Количество:" Grid.Column="1" Grid.Row="7" Style="{StaticResource defaultTextBlock}"/>
+            <TextBox Name="ProductCount" Grid.Column="1" Grid.Row="8" Style="{StaticResource defaultTextBox}"/>
+        </Grid>
+        
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="Cancel" Style="{DynamicResource defaultButton}">
+                Отменить
+            </Button>
+            <Button x:Name="AddProduct" Style="{DynamicResource defaultButton}">
+                Добавить
+            </Button>            
+        </StackPanel>
+    </Grid>
+</Window>

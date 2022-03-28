@@ -1,0 +1,52 @@
+﻿<Window x:Class="WarehouseITSystem.Views.AddNomenclatureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WarehouseITSystem.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Style="{StaticResource defaultUnresizableWindow}" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>            
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Добавление номенклатуры" Grid.Row="0" Margin="10 0 10 15" Style="{StaticResource defaultTextBlock}"/>
+        <TextBlock Text="Наименование:" Grid.Row="1" Style="{StaticResource defaultTextBlock}"/>
+        <TextBox x:Name="NomenclatureName" Grid.Row="2" Style="{StaticResource defaultTextBox}"/>
+        <TextBlock Text="Тип:" Grid.Row="3" Style="{StaticResource defaultTextBlock}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
+            <ComboBox x:Name="Types" Grid.Row="4" Style="{StaticResource defaultComboBox}"/>
+            <StackPanel Orientation="Horizontal" Height="60">
+                <Button x:Name="AddType" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_add.png"/>
+                </Button>
+                <Button x:Name="DeleteType" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_remove.png"/>
+                </Button>
+                <Button x:Name="ChangeType" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_edit.png"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Text="Стоимость:" Grid.Row="5" Style="{StaticResource defaultTextBlock}"/>
+        <TextBox x:Name="Worth" Grid.Row="6" Style="{StaticResource defaultTextBox}"/>
+
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="AddNomenclature" Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource defaultButton}" IsDefault="True"/>
+            <Button x:Name="Cancel" Content="Отменить" Grid.Column="0" HorizontalAlignment="Right" Style="{StaticResource defaultButton}" IsCancel="True"/>
+        </Grid>
+    </Grid>
+</Window>

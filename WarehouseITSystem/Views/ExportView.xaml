@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="WarehouseITSystem.Views.ExportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WarehouseITSystem.Views" 
+             xmlns:utils="clr-namespace:WarehouseITSystem.Utils" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Style="{StaticResource defaultUserControl}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Импорт" Margin="0 30 0 20" Style="{StaticResource defaultTextBlock}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                <ComboBox x:Name="TableImport" Style="{StaticResource defaultComboBox}"/>
+                <TextBlock Text="С перезаписью" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <CheckBox x:Name="IsTableImportRewrite" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <Button x:Name="ImportTable" Grid.Row="2" Style="{DynamicResource defaultButton}">
+                Импортировать
+            </Button>
+
+            <Separator Margin="0 50 0 50"/>
+
+            <TextBlock Text="Экспорт" Margin="0 0 0 20" Grid.Row="3" Style="{StaticResource defaultTextBlock}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
+                <ComboBox x:Name="TableExport" Style="{StaticResource defaultComboBox}"/>
+                <TextBlock Text="С перезаписью" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <CheckBox x:Name="IsTableExportRewrite" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <Button x:Name="ExportTable" Grid.Row="5" Style="{DynamicResource defaultButton}">
+                Экспортировать
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Отчеты" Margin="0 30 0 5" Style="{StaticResource defaultTextBlock}"/>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0 0 0 20" Grid.Row="4">
+                <TextBlock Text="С" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <DatePicker Name="DateStart"/>
+                <TextBlock Text="по" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <DatePicker Name="DateEnd"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
+                <TextBlock Text="О продажах" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <Button x:Name="SalesReport" Grid.Row="2" Height="60" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_report.png"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
+                <TextBlock Text="О закупках" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <Button x:Name="PurchaseReport" Grid.Row="2" Height="60" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_report.png"/>
+                </Button>
+            </StackPanel>
+
+            <Separator Margin="20 0 20 0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
+                <TextBlock Text="О заполненности складов" Margin="20 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <Button x:Name="WarehouseReport" Grid.Row="2" Height="60" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_report.png"/>
+                </Button>
+            </StackPanel>
+      
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4">
+                <TextBlock Text="Сводный отчет по продуктам (Excel)" Margin="0 0 10 0" Style="{StaticResource defaultTextBlock}"/>
+                <Button x:Name="ExcelReport" Grid.Row="2" Height="60" Style="{DynamicResource defaultButton}">
+                    <Image Source="pack://application:,,,/Media/icon_report.png"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        
+    </Grid>
+</UserControl>
